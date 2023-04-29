@@ -66,6 +66,16 @@ function __powerline_python_venv_prompt {
   [[ -n "${python_venv}" ]] && echo "${PYTHON_VENV_CHAR}${python_venv}|${PYTHON_VENV_THEME_PROMPT_COLOR}"
 }
 
+function __powerline_ruby_rbenv_prompt {
+  [[ -n "${RUBYVENV}" ]] && \
+    ruby_rbenv=$(basename "${RUBYVENV}") && \
+    echo "${RUBY_VENV_CHAR}${ruby_rbenv}|${PYTHON_VENV_THEME_PROMPT_COLOR}"
+}
+
+function __powerline_rust_renv_prompt {
+  [[ -n "${_RUSTENV_NAME}" ]] && echo "${RUST_VENV_CHAR}${_RUSTENV_NAME}|${PYTHON_VENV_THEME_PROMPT_COLOR}"
+}
+
 function __powerline_scm_prompt {
   local color=""
   local scm_prompt=""
